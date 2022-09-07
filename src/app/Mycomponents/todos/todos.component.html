@@ -1,0 +1,20 @@
+<div class="container">
+    <h1 class="text-center mb-2 font-family:">
+        ᴛᴏ ᴅᴏ ʟɪsᴛ ʙʏ ᴋᴀʀᴛɪᴋᴇʏ📃</h1>
+
+<app-add-todo (todoAdd)="addTodo($event)"> </app-add-todo>
+<app-delete-all-todo (todoDeleteAll)="deleteAllTodo()"></app-delete-all-todo>
+
+<h2
+    style="text-align: center; color: rgb(5, 16, 48); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+    Your To-do's 📑
+</h2>
+
+<div *ngIf="this.todos.length === 0; else elseBlock">No To-Do's to display. ☹ </div>
+<ng-template #elseBlock>
+    <div *ngFor="let todo of todos">
+        <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)" (todoCheckbox)="toggleTodo($event)">
+        </app-todo-item>
+    </div>
+</ng-template>
+</div>

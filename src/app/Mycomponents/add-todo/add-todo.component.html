@@ -1,0 +1,22 @@
+<div class="my-3">
+    <h4>Add a To-do item</h4>
+    <form (ngSubmit)="onSubmit()">
+        <!--  when we click on Add To-do butt on -->
+        <div class="form-group">
+            <label for="title">Todo Title</label>
+            <input type="text" [(ngModel)]="title" class="form-control" id="title" name="title"
+                aria-describedby="title">
+        </div>
+
+        <div class="form-group">
+            <label for="desc">Todo Description</label>
+            <input type="text" [(ngModel)]="desc" class="form-control" name="desc" id="desc" aria-describedby="desc">
+        </div>
+
+        <div class="my-2">
+            <button type="submit" class="btn btn btn-primary" >Add</button>
+        </div>
+    </form>
+
+</div>
+
